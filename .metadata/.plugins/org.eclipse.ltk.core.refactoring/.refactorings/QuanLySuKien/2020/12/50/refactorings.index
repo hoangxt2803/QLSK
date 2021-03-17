@@ -1,0 +1,25 @@
+1607522949722	Rename package 'com.example.demo'
+1607523209815	Move 'fragments' to 'admin'
+1607523212193	Move 'layout' to 'admin'
+1607523214120	Move 'role' to 'admin'
+1607523215788	Move 'user' to 'admin'
+1607524628393	Rename package 'com.example'
+1607524763334	Delete element
+1607524774546	Delete element
+1607525187329	Move 'event' to 'templates'
+1607525189120	Move 'fragments' to 'templates'
+1607525190820	Move 'layout' to 'templates'
+1607525192297	Move 'payment' to 'templates'
+1607525194098	Move 'role' to 'templates'
+1607525196092	Move 'service' to 'templates'
+1607525197661	Move 'user' to 'templates'
+1607525201256	Delete element
+1607525268918	Delete element
+1607525271933	Delete element
+1607525275803	Delete element
+1607525278824	Delete element
+1607525282727	Delete element
+1607525285970	Delete element
+1607534727371	Delete element
+1607536894618	Move 'uploads' to 'static'
+1607596317496	Rename type 'Customer'

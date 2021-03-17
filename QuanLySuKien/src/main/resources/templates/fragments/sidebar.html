@@ -1,0 +1,59 @@
+<nav class="pcoded-navbar" xmlns:th="http://www.thymeleaf.org" th:fragment="sidebar">
+    <div class="pcoded-inner-navbar main-menu">
+        <ul class="pcoded-item pcoded-left-item">
+           <!-- <li class="">
+                <a th:href="@{/dashboard}">
+                    <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                    <span class="pcoded-mtext">Dashboard</span>
+                </a> 
+                </li>--> 
+            
+            <li class="">
+                <a th:href="@{/admin/event}">
+                    <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
+                    <span class="pcoded-mtext">Quản lý sự kiện</span>
+                </a>
+            </li>
+             <li class="">
+                <a th:href="@{/admin/service}">
+                    <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
+                    <span class="pcoded-mtext">Quản lý loại sự kiện</span>
+                </a>
+            </li>
+            <!-- 
+            <li class="">
+                <a th:href="@{/admin/customer}">
+                    <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
+                    <span class="pcoded-mtext">Khách hàng</span>
+                </a>
+            </li>
+            <li class="">
+                <a th:href="@{/admin/lienhe}">
+                    <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
+                    <span class="pcoded-mtext">Liên hệ</span>
+                </a>
+            </li>
+            
+             -->
+            <li class="">
+                <a th:href="@{/admin/news}">
+                    <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
+                    <span class="pcoded-mtext">Quản lý tin tức</span>
+                </a>
+            </li>
+            
+            <li class="">
+                <a th:href="@{/admin/user}">
+                    <span class="pcoded-micon"><i class="feather icon-user"></i></span>
+                    <span class="pcoded-mtext">Quản lý tài khoản</span>
+                </a>
+            </li>
+            <li class="">
+                <a th:href="@{/admin/role}">
+                    <span class="pcoded-micon"><i class="feather icon-user"></i></span>
+                    <span class="pcoded-mtext">Quyền</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

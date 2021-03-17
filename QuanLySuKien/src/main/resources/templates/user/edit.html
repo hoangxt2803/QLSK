@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layout/default">
+<head>
+
+</head>
+<body>
+	<div class="main-body" layout:fragment="content">
+       <div class="page-body">
+           <div class="row">
+               <div class="col-md-12 mb-2">
+                   <div class="page-header-breadcrumb">
+                       <ul class="breadcrumb-title">
+                           <li class="breadcrumb-item"><a th:href="@{#}"> <i
+                                       class="feather icon-home"></i> Trang chủ
+                               </a></li>
+                           <li class="breadcrumb-item"><a th:href="@{#}">Cập nhật tài khoản</a></li>
+                       </ul>
+                   </div>
+               </div>
+               <div class="col-sm-12">
+                   <div class="card">
+                       <div class="card-header">
+                           <h2 class="text-uppercase text-center">Cập nhật tài khoản</h2>
+                       </div>
+                       <div class="card-block">
+                           <form th:action="@{/admin/user/edit}" method="post" th:object="${users}" enctype="multipart/form-data">
+                           <p class="text-center text-danger" th:text="${message}"></p>
+                               <div class="row">
+                                   <div class="col-md-6">
+                                   	<input type="hidden" th:field="*{id}" class="form-control" />
+                                       <div class="form-group">
+                                           <label>Họ tên</label>
+                                           <input type="text" th:field="*{fullname}" class="form-control" />
+                                       </div>
+                                       <div class="form-group">
+                                           <label>Email</label>
+                                           <input type="text" th:field="*{email}" class="form-control" />
+                                       </div>
+                                       <div class="form-group">
+						                    <label class="control-label d-flex">Giới tính</label>
+						                    <div class="form-group"></div>
+						                    <div class="radio ">
+						                      <label>
+						                        <input type="radio" th:field="*{gender}" value="1" />Nam
+						                      </label>
+						                    </div>	
+						                    <div class="radio">
+						                      <label>
+						                        <input type="radio" th:field="*{gender}" value="0" />Nữ
+						                      </label>
+						                    </div>
+						                </div>
+						                <div class="form-group">
+						                    <label class="control-label">Ngày sinh</label>
+						                    <input id="demoDate" data-format="dd/MM/yyyy" type="date" placeholder="Chọn ngày sinh" th:field="*{birthday}" class="form-control"/>
+						                 </div>
+						                 <div class="form-group">
+                                           <label>Số điện thoại</label>
+                                           <input type="text" th:field="*{phone}" class="form-control" />
+                                       </div>
+                                       <div class="form-group">
+                                           <label>Địa chỉ</label>
+                                           <input type="text" th:field="*{address}" class="form-control" />
+                                           <input type="hidden" th:field="*{password} " size="50" class="form-control" />
+                                       </div>
+                                   </div>
+                                   <div class="col-md-6">
+                                       
+                                       <div class="form-group">
+                                           <label>Quyền</label>
+                                           <select class="form-control" th:field="*{roleId}">
+                                           		
+                                               <option th:each="item : ${role}"  th:value="${item.id}" th:utext="${item.name}"></option>
+                                               		
+                                               
+                                               
+                                           </select>
+                                       </div>
+                                       <div class="form-group">
+					                    	<label class="control-label">Hình đại diện</label>
+					                    	<br>
+					                    	<input type="hidden" th:field="*{avatar}" class="form-control" />
+					                    	<img th:if="*{avatar}!= null " th:src="'/upload/'+*{avatar}" width="250px" height="200px"/>
+					                    	<input id="input-b3"  name="file" type="file" class="file" >	
+					                  	</div>
+                                       
+                                   </div>
+                                   <div class="col-12 mt-3">
+                                       <div class="form-group">
+                                           <button type="submit" class="btn btn-primary m-b-0">Lưu lại</button>
+                                           <a th:href="@{/admin/user}" class="btn btn-secondary text-white">Quay lại</a>
+                                       </div>
+                                   </div>
+                               </div>
+                           </form>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</body>
+</html>

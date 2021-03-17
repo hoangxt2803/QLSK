@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layout/default">
+<head>
+	<title>Insert title here</title>
+</head>
+<body>
+	<section layout:fragment="content">
+		<div class="main-body">
+	        <div class="page-body">
+	            <div class="row">
+	                <div class="col-md-12 mb-2">
+	                    <div class="page-header-breadcrumb">
+	                        <ul class="breadcrumb-title">
+	                            <li class="breadcrumb-item">
+	                                <a th:href="@{#}"> <i class="feather icon-home"></i> Trang chủ</a>
+	                            </li>
+	                            <li class="breadcrumb-item">
+	                                <a th:href="@{/admin/news}">Tin tức</a>
+	                            </li>
+	                            <li class="breadcrumb-item"><a th:href="@{#}">Cập nhật tin tức</a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	                <div class="col-sm-12">
+	                    <div class="card">
+	                        <div class="card-header">
+	                            <h2 class="text-uppercase text-center">Cập nhật tin tức</h2>
+	                        </div>
+	                        <div class="card-block">
+	                        	<p class="text-center text-danger" th:text="${message}"></p>
+	                            <form th:action="@{/admin/news/edit}" method="post"  th:object="${news}" enctype="multipart/form-data">
+	                                <div class="row">
+	                                
+	                                    <div class="col-md-12 m-auto">
+	                                    <input type="hidden" th:field="*{id}" class="form-control" />
+	                                        <div class="form-group">
+	                                            <label>Tiêu đề	</label>
+	                                            <input type="text" th:field="*{title}" class="form-control" />
+	                                        </div>
+	                                        <div class="form-group">
+	                                        
+					                    		<label class="control-label">Banner</label>
+					                    		<br>
+					                    		<input type="hidden" th:field="*{banner}" class="form-control" />
+					                    		<img th:if="*{banner}!= null " th:src="'/upload/'+*{banner}" width="250px" height="200px" class="py-1"/>
+					                    		<input id="input-b3" name="file" type="file" class="file" multiple 
+    										data-show-upload="false" data-show-caption="true" data-msg-placeholder="Select {files} for upload...">	
+					                  		</div>
+					                  		
+		                                       <div class="form-group">
+							                    	<label class="control-label">Nội dung</label>
+							                    	<textarea th:type="text" rows="4" id="summernote" placeholder="Content" class="form-control"
+		                              					th:field="*{content}" autocomplete="off"></textarea>
+		                              			</div>
+	                                        <div class="form-group mt-3">
+	                                            <button type="submit" class="btn btn-primary m-b-0">Lưu lại</button>
+	                                            <a th:href="@{/admin/news}"class="btn btn-secondary text-white">Quay lại</a>
+	                                        </div>
+	                                    </div>
+	                                    
+	                                </div>
+	                            </form>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

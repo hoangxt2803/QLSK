@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layout/default">
+<head>
+	
+	
+</head>
+<body>
+	<div class="main-body" layout:fragment="content">
+       <div class="page-body">
+           <div class="row">
+               <div class="col-md-12 mb-2">
+                   <div class="page-header-breadcrumb">
+                       <ul class="breadcrumb-title">
+                           <li class="breadcrumb-item"><a th:href="@{#}"> <i
+                                       class="feather icon-home"></i> Trang chủ
+                               </a></li>
+                           <li class="breadcrumb-item"><a th:href="@{#}">Thêm mới loại sự kiện</a></li>
+                       </ul>
+                   </div>
+               </div>
+               <div class="col-sm-12">
+                   <div class="card">
+                       <div class="card-header">
+                           <h2 class="text-uppercase text-center">Thêm mới loại sự kiện</h2>
+                       </div>
+                       <div class="card-block">
+                           <form th:action="@{/admin/service/add}" method="post" th:object="${service}" enctype="multipart/form-data">
+                           <p class="text-center text-danger" th:text="${message}"></p>
+                               <div class="row">
+                                   <div class="col-md-6">
+                                       <div class="form-group">
+                                           <label>Tên loại sự kiện</label>
+                                           <input type="text" th:field="*{name}" class="form-control" />
+                                       </div>
+                                       <div class="form-group">
+                                           <label>Mô tả</label>
+                                           <input type="text" th:field="*{description}" class="form-control" />
+                                       </div>
+						                <div class="form-group">
+					                    	<label class="control-label">Banner</label>
+					                    	<input id="input-b3" name="file" type="file" class="file" multiple 
+    										data-show-upload="false" data-show-caption="true" data-msg-placeholder="Select {files} for upload...">	
+					                  	</div>
+                                   </div>
+                                   <div class="col-md-6">
+	                                   <div class="form-group">
+						                    	<label class="control-label">Nội dung</label>
+						                    	<textarea type="text" rows="4" id="summernote" placeholder="Content" class="form-control"
+                              th:field="*{content}" autocomplete="off"></textarea>
+						                    	
+						               </div>
+                                       
+                                       
+                                       
+                                       
+                                   </div>
+                                   <div class="col-12 mt-3">
+                                       <div class="form-group">
+                                           <button type="submit" class="btn btn-primary m-b-0">Lưu lại</button>
+                                           <a th:href="@{/admin/service}" class="btn btn-secondary text-white">Quay lại</a>
+                                       </div>
+                                   </div>
+                               </div>
+                           </form>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   	
+   	
+</body>
+</html>
